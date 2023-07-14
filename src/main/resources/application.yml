@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc.mysql://localhost:3306/brazilgreen?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: CRbygAtdWGPsFuQZ6HyvFxwkkSxRPe
+
+  jpa:
+    show-sql: true
+    hibernate:
+      dll-auto: create
+    properties:
+      '[hibernate.format_sql]': true
