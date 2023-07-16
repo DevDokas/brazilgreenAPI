@@ -1,9 +1,9 @@
 spring:
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc.mysql://localhost:3306/brazilgreen?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/brazilgreen?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     username: root
     password: CRbygAtdWGPsFuQZ6HyvFxwkkSxRPe
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     show-sql: true
