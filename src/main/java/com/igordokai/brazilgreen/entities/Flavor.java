@@ -3,8 +3,8 @@ package com.igordokai.brazilgreen.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "flavors")
-public class Flavors {
+@Table(name = "flavor")
+public class Flavor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
