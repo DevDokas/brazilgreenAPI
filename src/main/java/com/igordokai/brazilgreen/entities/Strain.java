@@ -1,6 +1,8 @@
 package com.igordokai.brazilgreen.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "strains")
@@ -11,20 +13,58 @@ public class Strain {
     private Long id;
     @Column(nullable = false)
     private String name;
-    private Long kind_id;
+
+    @ManyToOne
+    @JoinColumn(name = "kind")
+    private Kind kind;
     private String description;
-    private Long flavors_list_id;
-    private Long helps_with_id;
-    private Long positive_effects_list_id;
-    private Long negative_effects_list_id;
-    private Long terpenes_list_id;
+
+    @ManyToMany
+    @JoinTable(
+            name = "strain_flavor",
+            joinColumns = @JoinColumn(name = "strain_id"),
+            inverseJoinColumns = @JoinColumn(name = "flavor_id")
+    )
+    private Set<Flavor> strain_flavor = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "strain_helps_with",
+            joinColumns = @JoinColumn(name = "strain_id"),
+            inverseJoinColumns = @JoinColumn(name = "helps_with_id")
+    )
+    private Set<HelpsWith> strain_helps_with = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "strain_positive_effects",
+            joinColumns = @JoinColumn(name = "strain_id"),
+            inverseJoinColumns = @JoinColumn(name = "positive_effects_id")
+    )
+    private Set<PositiveEffects> strain_positive_effects = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "strain_negative_effects",
+            joinColumns = @JoinColumn(name = "strain_id"),
+            inverseJoinColumns = @JoinColumn(name = "negative_effects_id")
+    )
+    private Set<NegativeEffects> strain_negative_effects = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "strain_terpenes",
+            joinColumns = @JoinColumn(name = "strain_id"),
+            inverseJoinColumns = @JoinColumn(name = "terpenes_id")
+    )
+    private Set<Terpenes> strain_terpenes = new HashSet<>();
     private Float thc_concentration;
     private Float cbd_concentration;
     private String image;
     private String created_at;
     private String updated_at;
 
-    // Getters
+   // Getters
 
     public Long getId() {
         return id;
@@ -34,32 +74,32 @@ public class Strain {
         return name;
     }
 
-    public Long getKind_id() {
-        return kind_id;
+    public Kind getKind() {
+        return kind;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public Long getFlavors_list_id() {
-        return flavors_list_id;
+    public Set<Flavor> getStrain_flavor() {
+        return strain_flavor;
     }
 
-    public Long getHelps_with_id() {
-        return helps_with_id;
+    public Set<HelpsWith> getStrain_helps_with() {
+        return strain_helps_with;
     }
 
-    public Long getPositive_effects_list_id() {
-        return positive_effects_list_id;
+    public Set<PositiveEffects> getStrain_positive_effects() {
+        return strain_positive_effects;
     }
 
-    public Long getNegative_effects_list_id() {
-        return negative_effects_list_id;
+    public Set<NegativeEffects> getStrain_negative_effects() {
+        return strain_negative_effects;
     }
 
-    public Long getTerpenes_list_id() {
-        return terpenes_list_id;
+    public Set<Terpenes> getStrain_terpenes() {
+        return strain_terpenes;
     }
 
     public Float getThc_concentration() {
@@ -84,6 +124,7 @@ public class Strain {
 
     // Setters
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -92,32 +133,32 @@ public class Strain {
         this.name = name;
     }
 
-    public void setKind_id(Long kind_id) {
-        this.kind_id = kind_id;
+    public void setKind(Kind kind) {
+        this.kind = kind;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setFlavors_list_id(Long flavors_list_id) {
-        this.flavors_list_id = flavors_list_id;
+    public void setStrain_flavor(Set<Flavor> strain_flavor) {
+        this.strain_flavor = strain_flavor;
     }
 
-    public void setHelps_with_id(Long helps_with_id) {
-        this.helps_with_id = helps_with_id;
+    public void setStrain_helps_with(Set<HelpsWith> strain_helps_with) {
+        this.strain_helps_with = strain_helps_with;
     }
 
-    public void setPositive_effects_list_id(Long positive_effects_list_id) {
-        this.positive_effects_list_id = positive_effects_list_id;
+    public void setStrain_positive_effects(Set<PositiveEffects> strain_positive_effects) {
+        this.strain_positive_effects = strain_positive_effects;
     }
 
-    public void setNegative_effects_list_id(Long negative_effects_list_id) {
-        this.negative_effects_list_id = negative_effects_list_id;
+    public void setStrain_negative_effects(Set<NegativeEffects> strain_negative_effects) {
+        this.strain_negative_effects = strain_negative_effects;
     }
 
-    public void setTerpenes_list_id(Long terpenes_list_id) {
-        this.terpenes_list_id = terpenes_list_id;
+    public void setStrain_terpenes(Set<Terpenes> strain_terpenes) {
+        this.strain_terpenes = strain_terpenes;
     }
 
     public void setThc_concentration(Float thc_concentration) {

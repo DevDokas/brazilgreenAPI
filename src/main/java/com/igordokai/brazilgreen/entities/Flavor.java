@@ -1,6 +1,8 @@
 package com.igordokai.brazilgreen.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "flavor")
@@ -27,7 +29,7 @@ public class Flavor {
         return icon;
     }
 
-    // Setters
+// Setters
 
     public void setId(Long id) {
         this.id = id;
@@ -40,4 +42,5 @@ public class Flavor {
     public void setIcon(String icon) {
         this.icon = icon;
     }
+
 }
