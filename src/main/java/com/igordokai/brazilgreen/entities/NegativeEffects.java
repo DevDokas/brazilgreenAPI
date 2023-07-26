@@ -1,8 +1,6 @@
 package com.igordokai.brazilgreen.entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "negative_effects")
@@ -15,8 +13,8 @@ public class NegativeEffects {
     private String name;
     private String icon;
 
-    @ManyToMany(mappedBy = "strain_negative_effects")
-    private Set<Strain> strain = new HashSet<>();
+/*    @ManyToMany(mappedBy = "strain_negative_effects")
+    private Set<Strain> strain = new HashSet<>();*/
 
     // Getters
 
@@ -32,9 +30,9 @@ public class NegativeEffects {
         return icon;
     }
 
-    public Set<Strain> getStrain() {
+/*    public Set<Strain> getStrain() {
         return strain;
-    }
+    }*/
 
     // Setters
 
@@ -50,7 +48,7 @@ public class NegativeEffects {
         this.icon = icon;
     }
 
-    public void setStrain(Set<Strain> strain) {
+/*    public void setStrain(Set<Strain> strain) {
         this.strain = strain;
-    }
+    }*/
 }
