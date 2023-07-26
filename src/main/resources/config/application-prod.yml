@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://root:FQi7IvtwA9b87hVq5rLI@containers-us-west-60.railway.app:6468/railway
+    username: root
+    password: FQi7IvtwA9b87hVq5rLI
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      dll-auto: create
+    properties:
+      '[hibernate.format_sql]': true
