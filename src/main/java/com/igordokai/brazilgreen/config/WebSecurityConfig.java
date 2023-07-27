@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOriginPattern(CorsConfiguration.ALL);
+        configuration.setAllowedOrigins(Arrays.asList("https://brazilgreenapi-production.up.railway.app", "http://localhost:*"));
         configuration.setAllowedMethods(List.of(CorsConfiguration.ALL));
         configuration.setAllowedHeaders(Arrays.asList("authorization", "content-type", "x-auth-token"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
