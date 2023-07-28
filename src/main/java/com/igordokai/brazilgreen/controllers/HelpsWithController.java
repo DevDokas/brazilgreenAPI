@@ -13,6 +13,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/strain/helps-with")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class HelpsWithController {
 
     private final HelpsWithService service;

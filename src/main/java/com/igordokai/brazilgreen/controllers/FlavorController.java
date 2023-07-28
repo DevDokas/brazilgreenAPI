@@ -13,6 +13,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/strain/flavor")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class FlavorController {
     private final FlavorService service;
 

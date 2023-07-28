@@ -13,6 +13,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/strain/kind")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class KindController {
     private final KindService service;
 

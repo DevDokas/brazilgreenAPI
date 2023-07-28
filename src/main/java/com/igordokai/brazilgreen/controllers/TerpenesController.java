@@ -13,6 +13,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/strain/terpenes")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class TerpenesController {
     private final TerpenesService service;
 
